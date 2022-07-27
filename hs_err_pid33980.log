@@ -1,0 +1,212 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 266338304 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3466), pid=33980, tid=34404
+#
+# JRE version:  (16.0.1+9) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (16.0.1+9-24, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: io.qameta.allure.CommandLine serve allure-results
+
+Host: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz, 8 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1023)
+Time: Thu Jul  1 18:09:35 2021 Egypt Standard Time elapsed time: 0.014124 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000023ae721a970):  JavaThread "Unknown thread" [_thread_in_vm, id=34404, stack(0x000000b85b200000,0x000000b85b300000)]
+
+Stack: [0x000000b85b200000,0x000000b85b300000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6687ca]
+V  [jvm.dll+0x7ca3c9]
+V  [jvm.dll+0x7cbb53]
+V  [jvm.dll+0x7cc1b3]
+V  [jvm.dll+0x242ea5]
+V  [jvm.dll+0x665589]
+V  [jvm.dll+0x65a175]
+V  [jvm.dll+0x2fc5ab]
+V  [jvm.dll+0x3037a6]
+V  [jvm.dll+0x352fee]
+V  [jvm.dll+0x35321f]
+V  [jvm.dll+0x2d3618]
+V  [jvm.dll+0x2d4854]
+V  [jvm.dll+0x79ccb1]
+V  [jvm.dll+0x360de1]
+V  [jvm.dll+0x77a990]
+V  [jvm.dll+0x3e55af]
+V  [jvm.dll+0x3e7081]
+C  [jli.dll+0x52fb]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffbbcf0cbb8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x0000023ae726a590 GCTaskThread "GC Thread#0" [stack: 0x000000b85b300000,0x000000b85b400000] [id=25896]
+  0x0000023ae727c680 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000b85b400000,0x000000b85b500000] [id=8732]
+  0x0000023ae727e740 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000b85b500000,0x000000b85b600000] [id=32244]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffbbc6e44d7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000023ae72178d0] Heap_lock - owner thread: 0x0000023ae721a970
+
+Heap address: 0x0000000703000000, size: 4048 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000703000000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffbbcac24ed]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.009 Loaded shared library C:\Program Files\Java\jdk-16.0.1\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff7b2da0000 - 0x00007ff7b2db0000 	C:\Program Files\Java\jdk-16.0.1\bin\java.exe
+0x00007ffc329d0000 - 0x00007ffc32bc5000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffc31f20000 - 0x00007ffc31fdd000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffc30350000 - 0x00007ffc30618000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffc30110000 - 0x00007ffc30210000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffc14180000 - 0x00007ffc14199000 	C:\Program Files\Java\jdk-16.0.1\bin\VCRUNTIME140.dll
+0x00007ffc14160000 - 0x00007ffc14178000 	C:\Program Files\Java\jdk-16.0.1\bin\jli.dll
+0x00007ffc31b40000 - 0x00007ffc31bec000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffc31900000 - 0x00007ffc3199e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffc328f0000 - 0x00007ffc3298b000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffc31df0000 - 0x00007ffc31f1b000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffc326a0000 - 0x00007ffc32840000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffc30860000 - 0x00007ffc30882000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffc31a70000 - 0x00007ffc31a9a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffc30240000 - 0x00007ffc3034b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffc143c0000 - 0x00007ffc1465a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1052_none_60b8f8fd71f5e8cb\COMCTL32.dll
+0x00007ffc308f0000 - 0x00007ffc3098d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffc26ec0000 - 0x00007ffc26eca000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffc31b10000 - 0x00007ffc31b40000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffc231a0000 - 0x00007ffc231ac000 	C:\Program Files\Java\jdk-16.0.1\bin\vcruntime140_1.dll
+0x00007ffc140c0000 - 0x00007ffc14151000 	C:\Program Files\Java\jdk-16.0.1\bin\msvcp140.dll
+0x00007ffbbc400000 - 0x00007ffbbcfab000 	C:\Program Files\Java\jdk-16.0.1\bin\server\jvm.dll
+0x00007ffc32110000 - 0x00007ffc32118000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffc18100000 - 0x00007ffc18109000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffc1fd00000 - 0x00007ffc1fd27000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffc31aa0000 - 0x00007ffc31b0b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffc2ea30000 - 0x00007ffc2ea42000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffc20c60000 - 0x00007ffc20c6a000 	C:\Program Files\Java\jdk-16.0.1\bin\jimage.dll
+0x00007ffc2de10000 - 0x00007ffc2dff4000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffc235f0000 - 0x00007ffc2361c000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffc30620000 - 0x00007ffc306a3000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffc0c880000 - 0x00007ffc0c8a5000 	C:\Program Files\Java\jdk-16.0.1\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-16.0.1\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1052_none_60b8f8fd71f5e8cb;C:\Program Files\Java\jdk-16.0.1\bin\server
+
+VM Arguments:
+java_command: io.qameta.allure.CommandLine serve allure-results
+java_class_path (initial): C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\allure-commandline-2.14.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jcommander-1.81.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\allure-generator-2.14.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jackson-dataformat-xml-2.12.3.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jackson-module-jaxb-annotations-2.12.3.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jackson-annotations-2.12.3.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jackson-core-2.12.3.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jackson-dataformat-yaml-2.12.3.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\allure-plugin-api-2.14.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\allure-model-2.13.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jackson-databind-2.12.3.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\commons-io-2.8.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jetty-server-9.4.20.v20190813.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\slf4j-log4j12-1.7.28.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\snakeyaml-1.27.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\javax.servlet-api-3.1.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jetty-http-9.4.20.v20190813.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jetty-io-9.4.20.v20190813.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\allure1-model-1.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\slf4j-api-1.7.28.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\log4j-1.2.17.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jaxb-api-2.3.1.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\httpclient-4.5.13.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\tika-core-1.26.jar;C:\Users\Smrmr\.
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266338304                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4244635648                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4244635648                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-16.0.1
+CLASSPATH=C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\allure-commandline-2.14.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jcommander-1.81.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\allure-generator-2.14.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jackson-dataformat-xml-2.12.3.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jackson-module-jaxb-annotations-2.12.3.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jackson-annotations-2.12.3.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jackson-core-2.12.3.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jackson-dataformat-yaml-2.12.3.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\allure-plugin-api-2.14.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\allure-model-2.13.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jackson-databind-2.12.3.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\commons-io-2.8.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jetty-server-9.4.20.v20190813.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\slf4j-log4j12-1.7.28.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\snakeyaml-1.27.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\javax.servlet-api-3.1.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jetty-http-9.4.20.v20190813.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jetty-io-9.4.20.v20190813.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\allure1-model-1.0.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\slf4j-api-1.7.28.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\log4j-1.2.17.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\jaxb-api-2.3.1.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\httpclient-4.5.13.jar;C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\lib\tika-core-1.26.jar;C:\Users\Smrmr\.m2\repository\allure\allure
+PATH=C:\Users\Smrmr\.m2\repository\allure\allure-2.14.0\bin;C:\Users\Smrmr\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955\jre\bin;C:/Users/Smrmr/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955/jre/bin/server;C:/Users/Smrmr/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_15.0.2.v20210201-0955/jre/bin;C:\Program Files\AdoptOpenJDK\jdk-8.0.292.10-hotspot\bin;C:\Users\Smrmr\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Smrmr\AppData\Local\Programs\Python\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Java\jdk-16.0.1\bin;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\Smrmr\Downloads\platform-tools;C:\Program Files\Git\cmd;C:\Program Files\wkhtmltopdf\bin;C:\Program Files\nodejs\;C:\Program Files\nodejs\node_modules\npm\bin;C:\Users\Smrmr\AppData\Local\Android\Sdk\platform-tools;C:\Users\Smrmr\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Smrmr\AppData\Local\Programs\Python\Python39\;C:\Users\Smrmr\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Program Files\TestProject Agent;C:\Users\Smrmr\.dotnet\tools;C:\Users\Smrmr\AppData\Roaming\npm;C:\WINDOWS\System32;
+USERNAME=Smrmr
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.1023)
+OS uptime: 17 days 0:33 hours
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12 microcode 0xde, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt
+
+Memory: 4k page, system-wide physical 16190M (5840M free)
+TotalPageFile size 34761M (AvailPageFile size 407M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 60M, peak: 314M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (16.0.1+9-24) for windows-amd64 JRE (16.0.1+9-24), built on Mar 26 2021 19:31:42 by "mach5one" with MS VC++ 16.7 (VS2019)
+
+END.

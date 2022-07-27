@@ -1,0 +1,4 @@
+service,id,inquiry,user,line ,fee,payment
+gobus,646,y,customer1,gobus_line,fee1,payment1
+extraqouta,214,n,customer1,extraqouta_line,fee1,payment1
+shahry,767,y,customer1,shahry_line,fee1,payment1

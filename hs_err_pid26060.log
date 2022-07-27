@@ -1,0 +1,35 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_STACK_OVERFLOW (0xc00000fd) at pc=0x00007ffbbc77de67, pid=26060, tid=36332
+#
+# JRE version: Java(TM) SE Runtime Environment (16.0.1+9) (build 16.0.1+9-24)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (16.0.1+9-24, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# Problematic frame:
+# V  [jvm.dll+0x37de67]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+#   
+#
+
+
+Command Line: io.qameta.allure.CommandLine serve allure-results
+
+Host: Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz, 8 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1023)
+Time: Thu Jul  1 22:17:59 2021 Egypt Standard Time elapsed time: 732800.784822 seconds (8d 11h 33m 20s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001c02f7c8460):  JavaThread "AWT-Shutdown" [_thread_in_vm, id=36332, stack(0x0000006b24200000,0x0000006b24300000)]
+
+Stack: [0x0000006b24200000,0x0000006b24300000],  sp=0x0000006b242ff410,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x37de67]
+V  [jvm.dll+0x6686f2]
+V  [jvm.dll+0x37e98b]
+V  [jvm.dll+0x37ec17]
+V  [jvm.dll+0x4085d1]
+V  [jvm.dll+0x780002]
+V  [jvm.dll+0x779b4a]
