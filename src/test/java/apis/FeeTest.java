@@ -56,7 +56,7 @@ public class FeeTest {
 
 
     @Test(dataProvider = "fee-provider")
-    public void testFeesWithInalidUserAndMobileLineAndValidFee(String serviceName ,String serviceId ) {
+    public void testFeesWithInvalidUserAndMobileLineAndValidFee(String serviceName ,String serviceId ) {
         System.out.println("Testing service:"+serviceName+".");
 //        precondition
         Customer eligibleCustomer = UserRepo.get("InvalidCustomer");
