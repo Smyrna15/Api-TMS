@@ -22,7 +22,6 @@ public class InquiryTest {
     }
 
 
-
     @Test(dataProvider = "inquiry-provider")
     public void testInquiryWithValidUserAndMobileLine(String serviceName ,String serviceNumber) {
 //        precondition
