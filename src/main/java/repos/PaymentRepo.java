@@ -9,7 +9,9 @@ import java.util.Map;
 public class PaymentRepo {
    static Map<String, PaymentBody> paymentTestData = new HashMap<>()
     {{
-        put("payment1",new PaymentBody("1", "36")); //"en"
+        put("ValidPayment",new PaymentBody("1", "36")); //"en"
+        put("InvalidPayment",new PaymentBody("1", "36")); //"en"
+
     }
     };
     public static PaymentBody get(String paymentLabel, int brn,String billingAccount )

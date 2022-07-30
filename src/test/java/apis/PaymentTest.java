@@ -1,5 +1,6 @@
 package apis;
 
+import DataProviders.DynamicServiceDataProvider;
 import DataProviders.ServiceDataProvider;
 import DataReaders.ConverterUtil;
 import io.restassured.response.Response;
@@ -19,23 +20,72 @@ import java.util.Arrays;
 public class PaymentTest {
     @DataProvider(name = "payment-provider")
     public Object[][] paymentProvider(){
-        ArrayList<String[]> data  = new ServiceDataProvider().getPaymentData();
+        ArrayList<String[]> data  = new DynamicServiceDataProvider().getAllData();
         return ConverterUtil.arraylistOfArrayTo2DArray(data);
     }
 
     @Test(dataProvider = "payment-provider")
-    public void testPayment(String serviceName ,String serviceNumber ,String user, String line, String payment)
+    public void testPaymentWithValidCustomerAndMobileLineAndValidPayment(String serviceName ,String serviceNumber )
     {
+        System.out.println("Testing service:"+serviceName+".");
 //        precondition
-        Customer eligibleCustomer = UserRepo.get(user);
+        Customer eligibleCustomer = UserRepo.get("ValidCustomer");
         String token  = eligibleCustomer.login();
-        String billingAccount= InquiryRepo.get(line).billingAccount;
-        int brn = eligibleCustomer.getBrn(serviceNumber, InquiryRepo.get(line));
+        String billingAccount= InquiryRepo.get("gobus_line").billingAccount;
+        int brn = eligibleCustomer.getBrn(serviceNumber, InquiryRepo.get("gobus_line"));
 //        action
-        Response resp = eligibleCustomer.pay(serviceNumber, PaymentRepo.get(payment, brn,billingAccount));
+        Response resp = eligibleCustomer.pay(serviceNumber, PaymentRepo.get("ValidPayment", brn,billingAccount));
 //        assert values in the response
         resp.prettyPrint();
      //   Assert.assertEquals(response.getStatusCode(), 200);
+
+    }
+    @Test(dataProvider = "payment-provider")
+    public void testPaymentWithValidCustomerAndMobileLineAndInvalidPayment(String serviceName ,String serviceNumber )
+    {
+        System.out.println("Testing service:"+serviceName+".");
+//        precondition
+        Customer eligibleCustomer = UserRepo.get("ValidCustomer");
+        String token  = eligibleCustomer.login();
+        String billingAccount= InquiryRepo.get("gobus_line").billingAccount;
+        int brn = eligibleCustomer.getBrn(serviceNumber, InquiryRepo.get("gobus_line"));
+//        action
+        Response resp = eligibleCustomer.pay(serviceNumber, PaymentRepo.get("InvalidPayment", brn,billingAccount));
+//        assert values in the response
+        resp.prettyPrint();
+        //   Assert.assertEquals(response.getStatusCode(), 200);
+
+    }
+    @Test(dataProvider = "payment-provider")
+    public void testPaymentWithInvalidCustomerAndMobileLineAndValidPayment(String serviceName ,String serviceNumber )
+    {
+        System.out.println("Testing service:"+serviceName+".");
+//        precondition
+        Customer eligibleCustomer = UserRepo.get("InvalidCustomer");
+        String token  = eligibleCustomer.login();
+        String billingAccount= InquiryRepo.get("gobus_line").billingAccount;
+        int brn = eligibleCustomer.getBrn(serviceNumber, InquiryRepo.get("gobus_line"));
+//        action
+        Response resp = eligibleCustomer.pay(serviceNumber, PaymentRepo.get("ValidPayment", brn,billingAccount));
+//        assert values in the response
+        resp.prettyPrint();
+        //   Assert.assertEquals(response.getStatusCode(), 200);
+
+    }
+    @Test(dataProvider = "payment-provider")
+    public void testPaymentWithInvalidCustomerAndMobileLineAndInvalidBRN(String serviceName ,String serviceNumber )
+    {
+        System.out.println("Testing service:"+serviceName+".");
+//        precondition
+        Customer eligibleCustomer = UserRepo.get("InvalidCustomer");
+        String token  = eligibleCustomer.login();
+        String billingAccount= InquiryRepo.get("gobus_line").billingAccount;
+        int brn = eligibleCustomer.getBrn(serviceNumber, InquiryRepo.get("gobus_line"));
+//        action
+        Response resp = eligibleCustomer.pay(serviceNumber, PaymentRepo.get("ValidPayment", 0,billingAccount));
+//        assert values in the response
+        resp.prettyPrint();
+        //   Assert.assertEquals(response.getStatusCode(), 200);
 
     }
 }
