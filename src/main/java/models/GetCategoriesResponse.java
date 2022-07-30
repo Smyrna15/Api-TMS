@@ -31,7 +31,7 @@ public class GetCategoriesResponse {
         public int index;
         public int level;
         public String serviceSubCategoryLabel;
-        public ArrayList<Object> services;
+        public ArrayList<Service> services;
         public ArrayList<ServiceCategory> serviceCategory;
     }
 

@@ -11,6 +11,8 @@ public class InquiryRepo {
         put("gobus_line",new InquiryBody("01200341116",  "36", "6")); //"en"
         put("extraqouta_line",new InquiryBody("01000341116",  "36", "6")); //"en"
         put("shahry_line",new InquiryBody("01100341116",  "36", "6")); //"en"
+        put("landline",new InquiryBody("0223750617",  "36", "6")); //"en"
+
 
     }
     };

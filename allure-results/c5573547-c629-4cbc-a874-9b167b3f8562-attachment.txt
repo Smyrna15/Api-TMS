@@ -1,6 +1,0 @@
-
-################################################################################################################################################
-Starting Execution:	[1 out of 1] test cases in the current suite
-Test Method:		[apis.InquiryTest.testInquiry]
-################################################################################################################################################
-[ReportManager] API Action [GetResponseJSONValue] successfully performed. With the following test data [Token]. @28-07-2022 14:47:52.0776 PM
